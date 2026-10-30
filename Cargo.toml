@@ -1,0 +1,25 @@
+[package]
+name = "nettui"
+version = "0.1.0"
+edition = "2024"
+description = "Terminal UI for controlling macOS wired and wireless network settings"
+build = "build.rs"
+
+[[bin]]
+name = "nettui"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.104"
+libc = "0.2.191"
+objc2 = "0.6.5"
+objc2-core-foundation = "0.3.2"
+objc2-core-location = "0.3.2"
+objc2-core-wlan = "0.3.2"
+objc2-foundation = "0.3.2"
+ratatui = "0.30.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
